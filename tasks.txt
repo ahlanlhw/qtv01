@@ -1,0 +1,45 @@
+trade strategy
+
+i) check portfolio balance
+ii) wait 300 records then_
+    calculate sequential and standardize
+    calculate jerk by difference of seq
+ii) on increasing sequential cml_vol -buy
+iii) decreasing sequential, sell
+iv) on jerk, sell
+
+execution method
+i) buy using limit done
+ii) exit using OCO sell order done
+
+programming to-do list
+i) calculate sequential and jerk
+ii) save into csv file 
+iii) trade order generator script to 
+	-> read from all pair csv, 
+	-> compile all pairs and trade ideas
+		- buy up to 60% of usdt value
+	-> size the trades and notionals
+		- each order 50$?3 pairs at max
+		- set limit buy order
+		- get all open orders statuses
+     another script to run orders
+	->based off latest bid ask
+	-> query position size, cannot be more than 30%*60% of USDT
+	observe market then use async
+		to execute trades
+	-> for each pair run 
+
+10/10/2020
+-> !Miniticker will scan for top volume1 socket
+-> Aggtrade stream for 30 pairs defined by
+	-sequential and jerk saved into each
+		pair's CSV 1 socket
+-> Consolidates into a 
+-> 
+
+sample test run on 1 pair first
+-> 1 script with methods to run for each aggTrade pair
+	-> with this script of methods, will input into main to run multiple streams and save into csv
+-> one script to read each csv and assess sequential (average of sequential) to enter at bid
+-> order execution -> marketDOM (for order execution), buy plus OCO order for exit
